@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Quiz</title>
+    <link rel="stylesheet" href="styles2.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1>Hello</h1>
+        <div class="gif-container">
+            <img src="images2/gifi.gif" alt="Welcome GIF" class="welcome-gif">
+        </div>
+        <button id="forwardArrow" class="forward-arrow">→</button>
+    </div>
+
+    <!-- Main Quiz Container (Hidden Initially) -->
+    <div class="quiz-container" id="quizContainer" style="display: none;">
+        <h2>Translate the sign language shown in the video.</h2>
+        <video id="video" controls>
+            <source src="/videos/sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="options">
+            <button class="option" onclick="selectAnswer('Option A')">Option A</button>
+            <button class="option" onclick="selectAnswer('Option B')">Option B</button>
+            <button class="option" onclick="selectAnswer('Option C')">Option C</button>
+            <button class="option" onclick="selectAnswer('Correct Answer')">Correct Answer</button>
+        </div>
+        <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
+        <p id="result" class="result"></p>
+
+        <!-- Add navigation buttons -->
+        <div class="nav-buttons">
+            <button id="prevButton">←</button>
+            <button id="nextButton">→</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
