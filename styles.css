@@ -108,6 +108,7 @@ h1 {
 /* Options container */
 .options {
     display: flex;
+    flex-direction: row; /* Default is row */
     gap: 30px;
 }
 
@@ -142,8 +143,17 @@ h1 {
 .option {
     transition: transform 0.5s ease;
 }
+
 .option:hover {
     transform: rotate(5deg) scale(1.1);
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 600px) {
+    .options {
+        flex-direction: column; /* Stack the buttons vertically */
+        gap: 20px; /* Reduce the gap between buttons */
+    }
 }
 
 /* About Us section */
