@@ -1,7 +1,7 @@
 /* Body and General Styling */
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('images2/im.jpg') no-repeat center center fixed;
+    background: url('images2/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
