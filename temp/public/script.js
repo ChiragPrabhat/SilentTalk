@@ -31,7 +31,7 @@ function selectAnswer(option) {
 function checkAnswer() {
     const resultElement = document.getElementById('result');
     if (selectedAnswer === correctAnswer) {
-        resultElement.textContent = 'Correct!';
+        resultElement.textContent = 'Correct, you nailed it!';
         resultElement.style.color = 'green';
     } else {
         resultElement.textContent = 'Incorrect, try again.';
