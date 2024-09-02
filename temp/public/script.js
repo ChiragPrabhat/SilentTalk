@@ -1,11 +1,20 @@
 let selectedAnswer = null;
-const correctAnswer = 'Correct Answer';
+let correctAnswer = '';
 
-// Sample questions and videos
 const questions = [
-    { videoSrc: '/videos/sample.mp4', options: ['Option A', 'Option B', 'Option C', 'Correct Answer'] },
-    // Add more questions here
+    {
+        videoSrc: '/videos/sample.mp4',
+        options: ['Option A', 'Option B', 'Option C', 'Correct Answer'],
+        correct: 'Correct Answer'
+    },
+    {
+        videoSrc: '/videos/sample.mp4',
+        options: ['Option A', 'Option B', 'Option C', 'New Correct Answer'],
+        correct: 'New Correct Answer'
+    },
+    // Add more questions here with different correct answers
 ];
+
 let currentIndex = 0;
 
 // Function to show the quiz and hide the welcome screen
@@ -31,7 +40,7 @@ function selectAnswer(option) {
 function checkAnswer() {
     const resultElement = document.getElementById('result');
     if (selectedAnswer === correctAnswer) {
-        resultElement.textContent = 'Correct, you nailed it!';
+        resultElement.textContent = 'Correct!';
         resultElement.style.color = 'green';
     } else {
         resultElement.textContent = 'Incorrect, try again.';
@@ -45,6 +54,8 @@ function showQuestion(index) {
     currentIndex = index;
 
     const question = questions[index];
+    correctAnswer = question.correct; // Update correct answer for the current question
+
     document.getElementById('video').src = question.videoSrc;
 
     const buttons = document.querySelectorAll('.option');
