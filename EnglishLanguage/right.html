@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Quiz</title>
+    <link rel="icon" type="image/x-icon" href="../images/elites.png">
+    <link rel="stylesheet" href="right.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="backg"></div>
+    <div class="logo">
+        <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
+    </div>
+    <!-- Difficulty Selection Screen (Initially Hidden) -->
+    <div class="difficulty-screen" id="difficultyScreen">
+        <h2>Select Difficulty Level</h2>
+        <div class="difficulty-options">
+            <div class="difficulty-option" onclick="selectDifficulty(1)">
+                <div class="option-content">Level 1</div>
+            </div>
+            <div class="difficulty-option" onclick="selectDifficulty(2)">
+                <div class="option-content">Level 2</div>
+            </div>
+            <div class="difficulty-option" onclick="selectDifficulty(3)">
+                <div class="option-content">Level 3</div>
+            </div>
+            <div class="difficulty-option" onclick="selectDifficulty(4)">
+                <div class="option-content">Level 4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Quiz Container (Initially Hidden) -->
+    <div class="quiz-container" id="quizContainer" style="display: none;">
+        <button id="backArrow" class="back-arrow">←</button>
+        <h2>Translate the sign language shown in the video.</h2>
+        <video id="video" controls>
+            <source src="../videos/sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="options"></div>
+        <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
+        <p id="result" class="result"></p>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <div class="pb">
+                <button id="prevButton">&larr; Previous</button>
+            </div>
+            <div class="nb">
+                <button id="nextButton">Next &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scriptright.js"></script>
+</body>
+</html>
