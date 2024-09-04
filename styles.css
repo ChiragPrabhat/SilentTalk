@@ -2,13 +2,10 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 body, h1, p {
     margin: 0;
     padding: 0;
     color: #ffffff;
-    background: url('images/bg.jpg') no-repeat center center fixed;
-    background-size: cover;
 }
 
 /* Logo styling */
@@ -35,6 +32,11 @@ header {
 .login-signup {
     text-align: right;
     padding-right: 20px;
+    background-color: #FB773C;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -42,15 +44,22 @@ header {
 }
 
 .login-signup a {
-    color: #0091f8;
+    font-weight: 900;
+    color: #ffffff;
     font-size: 1.5rem;
     margin-left: 15px;
+    margin-right: 15px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.login-signup a:hover {
-    color: #1bc456;
+.login-signup:hover {
+    color: #000000;
+    background: #FFB200;
+}
+
+.login-signupa a:hover{
+    color: black;
 }
 
 /* Icons at bottom right */
@@ -65,13 +74,17 @@ header {
 }
 
 .help, .settings {
-    color: #bbbbbb;
+    color: #ffffff;
+    background-color: #180161;
+    padding: 0.5rem;
+    border-radius: 50%;
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .help:hover, .settings:hover {
-    color: #f8b400;
+    color: #ffffff;
+    background-color: #FB773C;
 }
 
 /* Full-screen container */
@@ -83,11 +96,6 @@ header {
     height: 100vh;
     text-align: center;
     z-index: 100;
-}
-
-.fade-in {
-    animation: fadeIn 2s ease-in-out 0.25s forwards;
-    opacity: 0;
 }
 
 /* Keyframes for fade-in animation */
@@ -116,7 +124,7 @@ h1 {
 .btn {
     text-decoration: none;
     color: #000000;
-    background-color: #d89e0b;
+    background-color: #FFB200;
     padding: 20px 40px;
     border-radius: 50px;
     font-size: 1.5rem;
@@ -131,12 +139,14 @@ h1 {
 }
 
 /* Individual option hover colors */
-.sign-language:hover {
-    background-color: #5a5af1;
+.english-gujarati:hover {
+    background-color: #4F1787;
+    color: white;
 }
 
-.english-gujarati:hover {
-    background-color: #6e32ae;
+.sign-language:hover {
+    background-color: #FB773C;
+    color: white;
 }
 
 /* Extra transitions and effects */
@@ -166,13 +176,19 @@ h1 {
 
 .about-link {
     color: #ffffff;
+    background-color: #180161;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1.5rem;
     font-size: 1.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .about-link:hover {
-    color: #f8b400;
+    background-color: #EB3678;
+    color: #ffffff;
 }
 
 .about-content {
@@ -233,7 +249,7 @@ h1 {
 }
 
 .modal-content {
-    background-color: #1e3ef1;
+    background-color: #a01755;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -266,7 +282,7 @@ h1 {
 
 .modal button[type="submit"] {
     padding: 10px 20px;
-    background-color: #0091f8;
+    background-color: #f87800;
     color: #ffffff;
     border: none;
     border-radius: 5px;
