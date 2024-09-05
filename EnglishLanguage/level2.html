@@ -12,7 +12,7 @@
 <body>
     <div id="backg"></div>
     <div class="logo">
-        <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
+        <a href="../us.html"><img src="../images/logo.jpg" alt="Logo"></a>
     </div>
 
     <!-- Main Quiz Container -->
@@ -20,7 +20,7 @@
         <button id="backArrow" class="back-arrow">←</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="/videos/6Yes.mp4" type="video/mp4">
+            <source src="../videos/6Yes.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
@@ -47,11 +47,11 @@
             });
 
         const questions = [
-            { videoSrc: '/videos/6Yes.mp4', options: ['No', 'Yes', 'Good', 'Sad'], correctAnswer: 'Yes' },
-            { videoSrc: '/videos/7No.mp4', options: ['No', 'Yes', 'Welcome', 'Okay'], correctAnswer: 'No' },
-            { videoSrc: '/videos/8Help.mp4', options: ['I/me', 'Thank you', 'Help', 'Food'], correctAnswer: 'Help' },
-            { videoSrc: '/videos/9Please.mp4', options: ['Nice', 'Please', 'Wrong', 'Sign'], correctAnswer: 'Please' },
-            { videoSrc: '/videos/10Thankyou.mp4', options: ['Thank you', 'Hello', 'India', 'Happy'], correctAnswer: 'Thank you' }
+            { videoSrc: '../videos/6Yes.mp4', options: ['No', 'Yes', 'Good', 'Sad'], correctAnswer: 'Yes' },
+            { videoSrc: '../videos/7No.mp4', options: ['No', 'Yes', 'Welcome', 'Okay'], correctAnswer: 'No' },
+            { videoSrc: '../videos/8Help.mp4', options: ['I/me', 'Thank you', 'Help', 'Food'], correctAnswer: 'Help' },
+            { videoSrc: '../videos/9Please.mp4', options: ['Nice', 'Please', 'Wrong', 'Sign'], correctAnswer: 'Please' },
+            { videoSrc: '../videos/10Thankyou.mp4', options: ['Thank you', 'Hello', 'India', 'Happy'], correctAnswer: 'Thank you' }
         ];
 
         let currentIndex = 0;
