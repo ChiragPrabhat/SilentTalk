@@ -30,7 +30,7 @@
 <body>
     <div id="backg"></div>
     <div class="logo">
-        <a href="/us.html"><img src="../images/logo.jpg" alt="Logo"></a>
+        <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
     </div>
 
     <!-- Main Quiz Container -->
@@ -39,18 +39,18 @@
         <button id="backArrow" class="back-arrow">← Back</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="../videos/18More.mp4" type="video/mp4">
+            <source src="/videos/18More.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
-        <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
         <p id="result" class="result"></p>
 
         <!-- Navigation Buttons -->
         <div class="nav-buttons">
             <div class="pb">
-                <button id="prevButton">&larr; Previous</button>
+                <button id="prevButton">&larr; Back</button>
             </div>
+            <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
             <div class="nb">
                 <button id="nextButton">Next &rarr;</button>
             </div>
@@ -66,11 +66,11 @@
             });
 
         const questions = [
-            { videoSrc: '../videos/16EatFood.mp4', options: ['Eat food', 'Want', 'What', 'Mother'], correctAnswer: 'Eat food' },
-            { videoSrc: '../videos/17Milk.mp4', options: ['hello', 'No', 'Dog', 'Milk'], correctAnswer: 'Milk' },
-            { videoSrc: '../videos/18More.mp4', options: ['Father', 'More', 'Cat', 'Mother'], correctAnswer: 'More' },
-            { videoSrc: '../videos/19GoTo.mp4', options: ['Want', 'Again', 'Go to', 'Why'], correctAnswer: 'Go to' },
-            { videoSrc: '../videos/20Bathroom.mp4', options: ['Again', 'No', 'Why', 'Bathroom'], correctAnswer: 'Bathroom' }
+            { videoSrc: '/videos/16EatFood.mp4', options: ['Eat food', 'Want', 'What', 'Mother'], correctAnswer: 'Eat food' },
+            { videoSrc: '/videos/17Milk.mp4', options: ['hello', 'No', 'Dog', 'Milk'], correctAnswer: 'Milk' },
+            { videoSrc: '/videos/18More.mp4', options: ['Father', 'More', 'Cat', 'Mother'], correctAnswer: 'More' },
+            { videoSrc: '/videos/19GoTo.mp4', options: ['Want', 'Again', 'Go to', 'Why'], correctAnswer: 'Go to' },
+            { videoSrc: '/videos/20Bathroom.mp4', options: ['Again', 'No', 'Why', 'Bathroom'], correctAnswer: 'Bathroom' }
         ];
 
         let currentIndex = 0;

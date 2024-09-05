@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 1 Quiz</title>
-    <link rel="icon" type="image/x-icon" href="../images/elites.png">
+    <link rel="icon" type="image/x-icon" href="/images/elites.png">
     <link rel="stylesheet" href="right.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="backg"></div>
     <div class="logo">
-        <a href="../us.html"><img src="../images/logo.jpg" alt="Logo"></a>
+        <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
     </div>
 
     <!-- Main Quiz Container -->
@@ -20,18 +20,19 @@
         <button id="backArrow" class="back-arrow">←</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="../videos/1hello.mp4" type="video/mp4">
+            <source src="/videos/1hello.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
-        <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
+       
         <p id="result" class="result"></p>
 
         <!-- Navigation Buttons -->
         <div class="nav-buttons">
             <div class="pb">
-                <button id="prevButton">&larr; Previous</button>
+                <button id="prevButton">&larr; Back</button>
             </div>
+            <button id="checkButton" onclick="checkAnswer()" disabled>Check Answer</button>
             <div class="nb">
                 <button id="nextButton">Next &rarr;</button>
             </div>
@@ -47,11 +48,11 @@
             });
 
         const questions = [
-            { videoSrc: '../videos/1hello.mp4', options: ['hello', 'bye', 'welcome', 'thank you'], correctAnswer: 'hello' },
-            { videoSrc: '../videos/2SYL.mp4', options: ['help', 'happy', 'sad', 'see you later'], correctAnswer: 'see you later' },
-            { videoSrc: '../videos/3I-Me.mp4', options: ['angry', 'I/Me', 'thank you', 'hello'], correctAnswer: 'I/Me' },
-            { videoSrc: '../videos/4Father.mp4', options: ['happy', 'sorry', 'Father', 'sad'], correctAnswer: 'Father' },
-            { videoSrc: '../videos/5Mother.mp4', options: ['hi', 'Mother', 'happy', 'pain'], correctAnswer: 'Mother' }
+            { videoSrc: '/videos/1hello.mp4', options: ['hello', 'bye', 'welcome', 'thank you'], correctAnswer: 'hello' },
+            { videoSrc: '/videos/2SYL.mp4', options: ['help', 'happy', 'sad', 'see you later'], correctAnswer: 'see you later' },
+            { videoSrc: '/videos/3I-Me.mp4', options: ['angry', 'I/Me', 'thank you', 'hello'], correctAnswer: 'I/Me' },
+            { videoSrc: '/videos/4Father.mp4', options: ['happy', 'sorry', 'Father', 'sad'], correctAnswer: 'Father' },
+            { videoSrc: '/videos/5Mother.mp4', options: ['hi', 'Mother', 'happy', 'pain'], correctAnswer: 'Mother' }
         ];
 
         let currentIndex = 0;
