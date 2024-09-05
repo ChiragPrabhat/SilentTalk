@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 3 Quiz</title>
-    <link rel="icon" type="image/x-icon" href="/images/elites.png">
+    <link rel="icon" type="image/x-icon" href="../images/elites.png">
     <link rel="stylesheet" href="right.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -14,20 +14,13 @@
     <div class="logo">
         <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
     </div>
-    <!-- Welcome Screen -->
-    <div class="welcome-screen" id="welcomeScreen">
-        <h1>Hello</h1>
-        <div class="gif-container">
-            <img src="../images/gifi.gif" alt="Welcome GIF" class="welcome-gif">
-        </div>
-    </div>
 
-    <!-- Main Quiz Container (Initially Hidden) -->
-    <div class="quiz-container" id="quizContainer" style="display: none;">
+    <!-- Main Quiz Container -->
+    <div class="quiz-container" id="quizContainer">
         <button id="backArrow" class="back-arrow">←</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="../videos/sample.mp4" type="video/mp4">
+            <source src="/videos/11Want.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
@@ -46,21 +39,23 @@
     </div>
 
     <script>
-        // Level 3 Questions
+        // Load background content
         fetch('backgroundright.html')
-    .then(response => response.text())
-    .then(data => {
-    document.getElementById('backg').innerHTML = data;
-});
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('backg').innerHTML = data;
+            });
+
         const questions = [
-            { videoSrc: '../videos/sample.mp4', options: ['Correct Answer', 'Option G', 'Option H', 'Option I'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Correct Answer', 'Option G', 'Option H', 'Option I'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Correct Answer', 'Option G', 'Option H', 'Option I'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Correct Answer', 'Option G', 'Option H', 'Option I'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Correct Answer', 'Option G', 'Option H', 'Option I'], correctAnswer: 'Correct Answer' }
+            { videoSrc: '/videos/11Want.mp4', options: ['Want', 'Hello', 'Good', 'Bye'], correctAnswer: 'Want' },
+            { videoSrc: '/videos/12What.mp4', options: ['Milk', 'What', 'See you later', 'Food'], correctAnswer: 'What' },
+            { videoSrc: '/videos/13Dog.mp4', options: ['Eat food', 'Milk', 'Bye', 'Dog'], correctAnswer: 'Dog' },
+            { videoSrc: '/videos/14Cat.mp4', options: ['Bark', 'hello', 'Cat', 'Fly'], correctAnswer: 'Cat' },
+            { videoSrc: '/videos/15Again.mp4', options: ['Again', 'Run', 'Go', 'No'], correctAnswer: 'Again' }
         ];
 
         let currentIndex = 0;
+        let selectedAnswer = null;
 
         function loadQuestion() {
             const question = questions[currentIndex];
@@ -105,6 +100,9 @@
                 currentIndex++;
                 loadQuestion();
             }
+            else{
+                window.location.href = 'celebration.html?next=level4';
+            }
         };
 
         // Back arrow button
@@ -115,8 +113,6 @@
 
         // Initialize the quiz
         window.onload = function() {
-            document.getElementById('welcomeScreen').style.display = 'none';
-            document.getElementById('quizContainer').style.display = 'block';
             loadQuestion();
         };
     </script>

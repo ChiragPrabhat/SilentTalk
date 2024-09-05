@@ -95,13 +95,13 @@ document.getElementById('prevButton').onclick = () => {
 document.getElementById('nextButton').onclick = () => {
     if (currentLevel === 1 && currentIndex === questions[currentLevel].length - 1) {
         // Redirect to celebration page after the last question of Level 1
-        window.location.href = 'celebration/celebration.html?next=level2';
+        window.location.href = 'celebration.html?next=level2';
     } else if (currentLevel === 2 && currentIndex === questions[currentLevel].length - 1) {
         // Redirect to celebration page after the last question of Level 2
-        window.location.href = 'celebration/celebration.html?next=level3';
+        window.location.href = 'celebration.html?next=level3';
     } else if (currentLevel === 3 && currentIndex === questions[currentLevel].length - 1) {
         // Redirect to celebration page after the last question of Level 3
-        window.location.href = 'celebration/celebration.html?next=level4';
+        window.location.href = 'celebration.html?next=level4';
     } else if (currentIndex < questions[currentLevel].length - 1) {
         currentIndex++;
         loadQuestion();

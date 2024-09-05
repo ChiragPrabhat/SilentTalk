@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Language Quiz</title>
-    <link rel="icon" type="image/x-icon" href="../images/elites.png">
+    <link rel="icon" type="image/x-icon" href="/images/elites.png">
     <link rel="stylesheet" href="right.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -18,18 +18,10 @@
     <div class="difficulty-screen" id="difficultyScreen">
         <h2>Select Difficulty Level</h2>
         <div class="difficulty-options">
-            <div class="difficulty-option" onclick="selectDifficulty(1)">
-                <div class="option-content">Level 1</div>
-            </div>
-            <div class="difficulty-option" onclick="selectDifficulty(2)">
-                <div class="option-content">Level 2</div>
-            </div>
-            <div class="difficulty-option" onclick="selectDifficulty(3)">
-                <div class="option-content">Level 3</div>
-            </div>
-            <div class="difficulty-option" onclick="selectDifficulty(4)">
-                <div class="option-content">Level 4</div>
-            </div>
+            <a href="level1.html" target="_main"><div class="difficulty-option">Level 1</div></a>
+            <a href="level2.html" target="_main"><div class="difficulty-option">Level 2</div></a>
+            <a href="level3.html" target="_main"><div class="difficulty-option">Level 3</div></a>
+            <a href="level4.html" target="_main"><div class="difficulty-option">Level 4</div></a>
         </div>
     </div>
 
@@ -38,7 +30,7 @@
         <button id="backArrow" class="back-arrow">←</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="../videos/sample.mp4" type="video/mp4">
+            <source src="/videos/1hello.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
@@ -56,6 +48,12 @@
         </div>
     </div>
 
-    <script src="scriptright.js"></script>
+    <script>
+        fetch('backgroundright.html')
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById('backg').innerHTML = data;
+});
+    </script>
 </body>
 </html>

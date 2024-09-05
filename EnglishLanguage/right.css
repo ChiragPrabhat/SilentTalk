@@ -72,6 +72,7 @@ body {
 }
 
 .difficulty-options {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,13 +81,6 @@ body {
 }
 
 .difficulty-option {
-    background: linear-gradient(135deg, #f9a, #f79);
-    border: 2px solid #ccc;
-    color: white;
-    padding: 20px 30px;
-    font-size: 20px;
-    border-radius: 12px;
-    cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     display: flex;
     align-items: center;
@@ -94,11 +88,19 @@ body {
     width: 150px;
     height: 150px;
     text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, rgb(0, 0, 0), rgb(61, 61, 61));
+    border: 2px solid #ccc;
+    color: white;
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .difficulty-option:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #f7a, #f49);
+    background: linear-gradient(135deg, rgb(0, 0, 0), rgb(140, 0, 255));
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 

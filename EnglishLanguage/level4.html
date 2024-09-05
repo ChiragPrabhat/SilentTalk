@@ -5,29 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 4 Quiz</title>
-    <link rel="icon" type="image/x-icon" href="/images/elites.png">
+    <link rel="icon" type="image/x-icon" href="../images/elites.png">
     <link rel="stylesheet" href="right.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Style the back button position at the top-left */
+        .back-arrow {
+            position: absolute;
+            top: 130px;
+            left: 20px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border-radius: 20px;
+            padding: 10px;
+            
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .back-arrow:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <div id="backg"></div>
     <div class="logo">
         <a href="/us.html"><img src="/images/logo.jpg" alt="Logo"></a>
     </div>
-    <!-- Welcome Screen -->
-    <div class="welcome-screen" id="welcomeScreen">
-        <h1>Hello</h1>
-        <div class="gif-container">
-            <img src="../images/gifi.gif" alt="Welcome GIF" class="welcome-gif">
-        </div>
-    </div>
 
-    <!-- Main Quiz Container (Initially Hidden) -->
-    <div class="quiz-container" id="quizContainer" style="display: none;">
-        <button id="backArrow" class="back-arrow">←</button>
+    <!-- Main Quiz Container -->
+    <div class="quiz-container" id="quizContainer">
+        <!-- Back arrow positioned at the top-left of the question block -->
+        <button id="backArrow" class="back-arrow">← Back</button>
         <h2>Translate the sign language shown in the video.</h2>
         <video id="video" controls>
-            <source src="../videos/sample.mp4" type="video/mp4">
+            <source src="/videos/18More.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="options"></div>
@@ -46,21 +58,23 @@
     </div>
 
     <script>
-        // Level 4 Questions
+        // Load background content
         fetch('backgroundright.html')
-    .then(response => response.text())
-    .then(data => {
-    document.getElementById('backg').innerHTML = data;
-});
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('backg').innerHTML = data;
+            });
+
         const questions = [
-            { videoSrc: '../videos/sample.mp4', options: ['Option J', 'Option K', 'Option L', 'Correct Answer'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Option J', 'Option K', 'Option L', 'Correct Answer'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Option J', 'Option K', 'Option L', 'Correct Answer'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Option J', 'Option K', 'Option L', 'Correct Answer'], correctAnswer: 'Correct Answer' },
-            { videoSrc: '../videos/sample.mp4', options: ['Option J', 'Option K', 'Option L', 'Correct Answer'], correctAnswer: 'Correct Answer' }
+            { videoSrc: '/videos/16EatFood.mp4', options: ['Eat food', 'Want', 'What', 'Mother'], correctAnswer: 'Eat food' },
+            { videoSrc: '/videos/17Milk.mp4', options: ['hello', 'No', 'Dog', 'Milk'], correctAnswer: 'Milk' },
+            { videoSrc: '/videos/18More.mp4', options: ['Father', 'More', 'Cat', 'Mother'], correctAnswer: 'More' },
+            { videoSrc: '/videos/19GoTo.mp4', options: ['Want', 'Again', 'Go to', 'Why'], correctAnswer: 'Go to' },
+            { videoSrc: '/videos/20Bathroom.mp4', options: ['Again', 'No', 'Why', 'Bathroom'], correctAnswer: 'Bathroom' }
         ];
 
         let currentIndex = 0;
+        let selectedAnswer = null;
 
         function loadQuestion() {
             const question = questions[currentIndex];
@@ -105,18 +119,18 @@
                 currentIndex++;
                 loadQuestion();
             }
+            else{
+                window.location.href = 'right.html';
+            }
         };
 
-        // Back arrow button
+        // Back arrow button redirects to right.html
         document.getElementById('backArrow').onclick = () => {
-            document.getElementById('quizContainer').style.display = 'none';
-            document.getElementById('difficultyScreen').style.display = 'block';
+            window.location.href = 'right.html';
         };
 
         // Initialize the quiz
         window.onload = function() {
-            document.getElementById('welcomeScreen').style.display = 'none';
-            document.getElementById('quizContainer').style.display = 'block';
             loadQuestion();
         };
     </script>
