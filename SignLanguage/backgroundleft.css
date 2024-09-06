@@ -11,6 +11,7 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+
 /* Basic styling for each section */
 .background-section {
     height: 25vh;
@@ -23,25 +24,25 @@ body, html {
 /* Section-specific background colors and transforms */
 .section1 {
     height:30vh;
-    background: #1E201E; /* Light coral */
+    background: #003C43; /* Light coral */
     transform: skewY(-5deg);
 }
 
 .section2 {
     height: 50vh;
-    background: #3C3D37; /* Yellow-orange */
+    background: #135D66; /* Yellow-orange */
     transform: skewY(5deg);
 }
 
 .section3 {
     height:25vh;
-    background: #ECDFCC; /* Light green */
+    background: #abffe8; /* Light green */
     transform: skewY(-15deg);
 }
 
 .section4 {
     height:20vh;
-    background: #697565; /* Purple */
+    background: #77B0AA; /* Purple */
     transform: skewY(2.9deg);
 }
 
