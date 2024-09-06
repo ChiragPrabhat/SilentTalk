@@ -5,6 +5,23 @@ body {
     overflow: hidden;
     height: 100vh;
 }
+.option-video {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.option-video:hover {
+    border-color: #007bff;
+}
+
+.option-video.selected {
+    border-color: #007bff;
+}
 
 /* Background Styling */
 #backg {

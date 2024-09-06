@@ -19,10 +19,10 @@
     <div class="quiz-container" id="quizContainer">
         <button id="backArrow" class="back-arrow">←</button>
         <h2>Translate the sign language shown in the video.</h2>
-        <video id="video" controls>
+        <!-- <video id="video" controls>
             <source src="../videos/6Yes.mp4" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
+        </video> -->
         <div class="options"></div>
         <p id="result" class="result"></p>
 
@@ -46,46 +46,75 @@
                 document.getElementById('backg').innerHTML = data;
             });
 
-        const questions = [
-            { videoSrc: '../videos/6Yes.mp4', options: ['No', 'Yes', 'Good', 'Sad'], correctAnswer: 'Yes' },
-            { videoSrc: '../videos/7No.mp4', options: ['No', 'Yes', 'Welcome', 'Okay'], correctAnswer: 'No' },
-            { videoSrc: '../videos/8Help.mp4', options: ['I/me', 'Thank you', 'Help', 'Food'], correctAnswer: 'Help' },
-            { videoSrc: '../videos/9Please.mp4', options: ['Nice', 'Please', 'Wrong', 'Sign'], correctAnswer: 'Please' },
-            { videoSrc: '../videos/10Thankyou.mp4', options: ['Thank you', 'Hello', 'India', 'Happy'], correctAnswer: 'Thank you' }
-        ];
+            const questions = [
+    { 
+        question: 'Which of the following is the sign for Father?', 
+        options: ['../videos/1hello.mp4', '../videos/4Father.mp4', '../videos/11Want.mp4', '../videos/12What.mp4'], 
+        correctAnswer: '../videos/4Father.mp4'
+    },
+    { 
+        question: 'Which of the following is the sign for Mother?', 
+        options: ['../videos/11Want.mp4', '../videos/4Father.mp4', '../videos/3I-Me.mp4', '../videos/5Mother.mp4'], 
+        correctAnswer: '../videos/5Mother.mp4'
+    },
+    { 
+        question: 'Which of the following is the sign for Help?', 
+        options: ['../videos/1hello.mp4', '../videos/6Yes.mp4', '../videos/11Want.mp4', '../videos/8Help.mp4'], 
+        correctAnswer: '../videos/8Help.mp4'
+    },
+    { 
+        question: 'Which of the following is the sign for ThankYou?', 
+        options: ['../videos/10Thankyou.mp4', '../videos/4Father.mp4', '../videos/11Want.mp4', '../videos/7No.mp4'], 
+        correctAnswer: '../videos/10Thankyou.mp4' 
+    },
+    { 
+        question: 'Which of the following is the sign for Eat Food?', 
+        options: ['../videos/1hello.mp4', '../videos/9Please.mp4', '../videos/16EatFood.mp4', '../videos/12What.mp4'], 
+        correctAnswer: '../videos/16EatFood.mp4'
+    }
+];
+currentIndex=0;
+selectedAnswer=null;
+function loadQuestion() {
+    const question = questions[currentIndex];
+    document.querySelector('h2').textContent = question.question;
 
-        let currentIndex = 0;
-        let selectedAnswer = null;
+    const optionsContainer = document.querySelector('.options');
+    optionsContainer.innerHTML = '';
 
-        function loadQuestion() {
-            const question = questions[currentIndex];
-            document.getElementById('video').src = question.videoSrc;
+    question.options.forEach(option => {
+        const video = document.createElement('video');
+        video.src = option;
+        video.className = 'option-video';
+        video.muted = true; // Ensures the video is muted
+        video.onmouseover = () => video.play();
+        video.onmouseout = () => video.pause();
+        video.onclick = () => selectOption(video);
+        optionsContainer.appendChild(video);
+    });
 
-            const optionsContainer = document.querySelector('.options');
-            optionsContainer.innerHTML = '';
+    document.getElementById('checkButton').disabled = false;
+    document.getElementById('result').textContent = '';
+}
 
-            question.options.forEach(option => {
-                const button = document.createElement('button');
-                button.textContent = option;
-                button.className = 'option';
-                button.onclick = () => selectOption(button);
-                optionsContainer.appendChild(button);
-            });
-
-            document.getElementById('checkButton').disabled = false;
-            document.getElementById('result').textContent = '';
-        }
-
-        function selectOption(button) {
-            document.querySelectorAll('.option').forEach(option => option.classList.remove('selected'));
-            button.classList.add('selected');
-            selectedAnswer = button.textContent;
-        }
+function selectOption(video) {
+    document.querySelectorAll('.option-video').forEach(option => option.classList.remove('selected'));
+    video.classList.add('selected');
+    selectedAnswer = video.src;
+}
 
         function checkAnswer() {
             const question = questions[currentIndex];
-            const result = selectedAnswer === question.correctAnswer ? 'Correct!' : 'Incorrect!';
-            document.getElementById('result').textContent = result;
+    
+    // Get the selected option's file name
+    const selectedFileName = selectedAnswer.split('/').pop(); // Extracts the file name from the path
+    
+    // Get the correct answer's file name
+    const correctFileName = question.correctAnswer.split('/').pop();
+    
+    // Compare the file names
+    const result = selectedFileName === correctFileName ? 'Correct!' : 'Incorrect!';
+    document.getElementById('result').textContent = result;
         }
 
         document.getElementById('prevButton').onclick = () => {
